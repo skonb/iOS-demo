@@ -32,6 +32,11 @@
                                              selector:@selector(captureSessionDidStartRunning)
                                                  name:AVCaptureSessionDidStartRunningNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(captureSessionDidStopRunning)
+                                                 name:AVCaptureSessionDidStopRunningNotification
+                                               object:nil];
 
     //RTCEAGLVideoViewDelegate provides notifications on video frame dimensions
     [self.remoteView setDelegate:self];
@@ -39,9 +44,9 @@
     self.signaling = [[TLKSocketIOSignaling alloc] initWithVideo:YES];
     //TLKSocketIOSignalingDelegate provides signaling notifications
     self.signaling.delegate = self;
-//    [self.signaling connectToServer:@"10.0.1.5" port:8080 secure:NO success:^{
-    [self.signaling connectToServer:@"signalmaster-demo.herokuapp.com" port:80 secure:NO success:^{
-        
+    [self.signaling connectToServer:@"10.0.1.5" port:8080 secure:NO success:^{
+//    [self.signaling connectToServer:@"signalmaster-demo.herokuapp.com" port:80 secure:NO success:^{
+        [self configureLocalPreview];
         [self.signaling joinRoom:@"ios-demo" success:^{
             NSLog(@"join success");
         } failure:^{
@@ -59,16 +64,27 @@
     });
 }
 
+- (void)captureSessionDidStopRunning{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.previewLayer removeFromSuperlayer];
+        self.previewLayer = nil;
+    });
+}
+
 - (void)configureLocalPreview {
-    RTCVideoTrack *videoTrack = [self.signaling.localMediaStream.videoTracks firstObject];
-    // There is a chance that this video source is not an RTCAVFoundationVideoSource, but we know it should be from TLKWebRTC
-    RTCAVFoundationVideoSource *videoSource = (RTCAVFoundationVideoSource*)videoTrack.source;
-    AVCaptureSession *captureSession = [videoSource captureSession];
-
-    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession];
-    self.previewLayer.frame = self.localView.bounds;
-
-    [self.localView.layer addSublayer:self.previewLayer];
+    if(!self.previewLayer){
+        RTCVideoTrack *videoTrack = [self.signaling.localMediaStream.videoTracks firstObject];
+        // There is a chance that this video source is not an RTCAVFoundationVideoSource, but we know it should be from TLKWebRTC
+        RTCAVFoundationVideoSource *videoSource = (RTCAVFoundationVideoSource*)videoTrack.source;
+        AVCaptureSession *captureSession = [videoSource captureSession];
+        if(captureSession){
+            self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession];
+            self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+            self.previewLayer.frame = self.localView.bounds;
+            
+            [self.localView.layer addSublayer:self.previewLayer];
+        }
+    }
 }
 
 #pragma mark - TLKSocketIOSignalingDelegate
@@ -76,16 +92,17 @@
 - (void)socketIOSignaling:(TLKSocketIOSignaling *)socketIOSignaling addedStream:(TLKMediaStream *)stream {
     NSLog(@"addedStream");
 
-    RTCVideoTrack *remoteVideoTrack = stream.stream.videoTracks[0];
-
-    if(self.remoteVideoTrack) {
-        [self.remoteVideoTrack removeRenderer:self.remoteView];
-        self.remoteVideoTrack = nil;
-        [self.remoteView renderFrame:nil];
+    if(stream.stream.videoTracks.count){
+        RTCVideoTrack *remoteVideoTrack = stream.stream.videoTracks[0];
+        if(self.remoteVideoTrack) {
+            [self.remoteVideoTrack removeRenderer:self.remoteView];
+            self.remoteVideoTrack = nil;
+            [self.remoteView renderFrame:nil];
+        }
+        
+        self.remoteVideoTrack = remoteVideoTrack;
+        [self.remoteVideoTrack addRenderer:self.remoteView];
     }
-    
-    self.remoteVideoTrack = remoteVideoTrack;
-    [self.remoteVideoTrack addRenderer:self.remoteView];
 
 }
 
@@ -105,11 +122,21 @@
     NSLog(@"locked");
 }
 
+-(void)socketIOSignaling:(TLKSocketIOSignaling *)socketIOSignaling recievedMessage:(NSDictionary *)message andData:(id)data{
+    NSLog(@"message received:%@", message);
+}
+
 
 #pragma mark - RTCEAGLVideoViewDelegate
 
 -(void)videoView:(RTCEAGLVideoView *)videoView didChangeVideoSize:(CGSize)size {
     NSLog(@"videoView ?");
+    
+    self.remoteView.frame = ^(CGRect rect){
+        CGRect res = CGRectMake(0, 0, size.width, size.height);
+        res.origin = CGPointMake((rect.size.width - res.size.width)/2, (rect.size.height - res.size.height)/2);
+        return res;
+    }(self.view.frame);
 }
 
 

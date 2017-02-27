@@ -26,7 +26,8 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-        <key>NSAllowsArbitraryLoads</key><true/>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>signalmaster-demo.herokuapp.com</key>
@@ -50,5 +51,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>ビデオチャットのため、カメラにアクセスします。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>ビデオチャットのため、マイクにアクセスします。</string>
 </dict>
 </plist>
