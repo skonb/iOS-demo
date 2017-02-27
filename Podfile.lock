@@ -1,59 +1,15 @@
 PODS:
-  - AFNetworking (2.6.3):
-    - AFNetworking/NSURLConnection (= 2.6.3)
-    - AFNetworking/NSURLSession (= 2.6.3)
-    - AFNetworking/Reachability (= 2.6.3)
-    - AFNetworking/Security (= 2.6.3)
-    - AFNetworking/Serialization (= 2.6.3)
-    - AFNetworking/UIKit (= 2.6.3)
-  - AFNetworking/NSURLConnection (2.6.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.3):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.3)
-  - AFNetworking/Security (2.6.3)
-  - AFNetworking/Serialization (2.6.3)
-  - AFNetworking/UIKit (2.6.3):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - AZSocketIO (0.0.6):
-    - AFNetworking (~> 2.x)
-    - SocketRocket (~> 0.x)
-  - libjingle_peerconnection (10604.2.2)
-  - SocketRocket (0.4.2)
-  - TLKSimpleWebRTC (1.0.0):
-    - AZSocketIO (= 0.0.6)
-  - TLKWebRTC (2.1.0)
+  - libjingle_peerconnection (11177.2.0)
+  - Socket.IO-Client-Swift (8.2.0)
 
 DEPENDENCIES:
   - libjingle_peerconnection
-  - TLKSimpleWebRTC (from `https://github.com/otalk/TLKSimpleWebRTC.git`)
-  - TLKWebRTC (from `https://github.com/otalk/TLKWebRTC.git`)
-
-EXTERNAL SOURCES:
-  TLKSimpleWebRTC:
-    :git: https://github.com/otalk/TLKSimpleWebRTC.git
-  TLKWebRTC:
-    :git: https://github.com/otalk/TLKWebRTC.git
-
-CHECKOUT OPTIONS:
-  TLKSimpleWebRTC:
-    :commit: a459335423e98e4540222a86e457f7778c0d9b05
-    :git: https://github.com/otalk/TLKSimpleWebRTC.git
-  TLKWebRTC:
-    :commit: 9d5f8dfc9791fe9e541a5ad69b8b763fdbbc94d3
-    :git: https://github.com/otalk/TLKWebRTC.git
+  - Socket.IO-Client-Swift
 
 SPEC CHECKSUMS:
-  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  AZSocketIO: 135d76d11e90a0b7509f0f64d448fc8d0cd96e4f
-  libjingle_peerconnection: e2068e7c6859c64409345931ee035616c893c107
-  SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
-  TLKSimpleWebRTC: be2ec60106ed78c034c2a85a2945c49ccf92131f
-  TLKWebRTC: ac347a4b53024a2e81ff843d3e984bb1337d3d79
+  libjingle_peerconnection: 3458f646ddd61f08a9f3a0c43fb01fff5c165eb8
+  Socket.IO-Client-Swift: 900cf511777045c80d1ce1f11f71261e87765dd1
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: f16c6511ff40c0af4ba65fdb08bd6be0c20bdc62
+
+COCOAPODS: 1.2.0

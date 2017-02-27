@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F438559218F4EE8820B6C27 /* libPods-ios-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF7C121D12E442B8BA4FDEB /* libPods-ios-demo.a */; };
+		2955510B2ACE0DAC3FB65160 /* Pods_ios_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E96BFCEA56DB86B378C9B8 /* Pods_ios_demo.framework */; };
 		A64107D319B1241F00725AA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64107D219B1241F00725AA0 /* Foundation.framework */; };
 		A64107D519B1241F00725AA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64107D419B1241F00725AA0 /* CoreGraphics.framework */; };
 		A64107D719B1241F00725AA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64107D619B1241F00725AA0 /* UIKit.framework */; };
@@ -22,6 +22,9 @@
 		A64107F419B1241F00725AA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64107D619B1241F00725AA0 /* UIKit.framework */; };
 		A64107FC19B1241F00725AA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A64107FA19B1241F00725AA0 /* InfoPlist.strings */; };
 		A64107FE19B1241F00725AA0 /* ios_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A64107FD19B1241F00725AA0 /* ios_demoTests.m */; };
+		FDBA49301E62E2FF00C5EFCE /* TLKMediaStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBA492D1E62E2FF00C5EFCE /* TLKMediaStream.m */; };
+		FDBA49311E62E2FF00C5EFCE /* TLKSocketIOSignaling.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBA492F1E62E2FF00C5EFCE /* TLKSocketIOSignaling.m */; };
+		FDBA49351E62E30F00C5EFCE /* TLKWebRTC.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBA49341E62E30F00C5EFCE /* TLKWebRTC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52E96BFCEA56DB86B378C9B8 /* Pods_ios_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F19ECF91B16025C00D4C69D /* libWebRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWebRTC.a; path = Pods/libjingle_peerconnection/libjingle_peerconnection/libWebRTC.a; sourceTree = "<group>"; };
 		A64107CF19B1241F00725AA0 /* ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64107D219B1241F00725AA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,9 +59,14 @@
 		A64107F919B1241F00725AA0 /* ios-demoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios-demoTests-Info.plist"; sourceTree = "<group>"; };
 		A64107FB19B1241F00725AA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A64107FD19B1241F00725AA0 /* ios_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_demoTests.m; sourceTree = "<group>"; };
-		BFF7C121D12E442B8BA4FDEB /* libPods-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D71C4F837B6C38F625B89397 /* Pods-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-demo/Pods-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
-		E1FAF0C6D825B902631032A5 /* Pods-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-demo/Pods-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		B087684EFA246AD76F360440 /* Pods-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-demo/Pods-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
+		FA04F534836B85B05E7DCB1E /* Pods-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-demo/Pods-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		FDBA492C1E62E2FF00C5EFCE /* TLKMediaStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLKMediaStream.h; sourceTree = "<group>"; };
+		FDBA492D1E62E2FF00C5EFCE /* TLKMediaStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLKMediaStream.m; sourceTree = "<group>"; };
+		FDBA492E1E62E2FF00C5EFCE /* TLKSocketIOSignaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLKSocketIOSignaling.h; sourceTree = "<group>"; };
+		FDBA492F1E62E2FF00C5EFCE /* TLKSocketIOSignaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLKSocketIOSignaling.m; sourceTree = "<group>"; };
+		FDBA49331E62E30F00C5EFCE /* TLKWebRTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLKWebRTC.h; sourceTree = "<group>"; };
+		FDBA49341E62E30F00C5EFCE /* TLKWebRTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLKWebRTC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +77,7 @@
 				A64107D519B1241F00725AA0 /* CoreGraphics.framework in Frameworks */,
 				A64107D719B1241F00725AA0 /* UIKit.framework in Frameworks */,
 				A64107D319B1241F00725AA0 /* Foundation.framework in Frameworks */,
-				7F438559218F4EE8820B6C27 /* libPods-ios-demo.a in Frameworks */,
+				2955510B2ACE0DAC3FB65160 /* Pods_ios_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,11 +94,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		518A64E66FFDFE4E91077D16 /* Pods */ = {
+		50F79ED462D7598835CC48DA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1FAF0C6D825B902631032A5 /* Pods-ios-demo.debug.xcconfig */,
-				D71C4F837B6C38F625B89397 /* Pods-ios-demo.release.xcconfig */,
+				FA04F534836B85B05E7DCB1E /* Pods-ios-demo.debug.xcconfig */,
+				B087684EFA246AD76F360440 /* Pods-ios-demo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -97,11 +106,13 @@
 		A64107C619B1241F00725AA0 = {
 			isa = PBXGroup;
 			children = (
+				FDBA49321E62E30F00C5EFCE /* TLKWebRTC */,
+				FDBA492B1E62E2FF00C5EFCE /* TLKSimpleWebRTC */,
 				A64107D819B1241F00725AA0 /* ios-demo */,
 				A64107F719B1241F00725AA0 /* ios-demoTests */,
 				A64107D119B1241F00725AA0 /* Frameworks */,
 				A64107D019B1241F00725AA0 /* Products */,
-				518A64E66FFDFE4E91077D16 /* Pods */,
+				50F79ED462D7598835CC48DA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,7 +133,7 @@
 				A64107D419B1241F00725AA0 /* CoreGraphics.framework */,
 				A64107D619B1241F00725AA0 /* UIKit.framework */,
 				A64107F119B1241F00725AA0 /* XCTest.framework */,
-				BFF7C121D12E442B8BA4FDEB /* libPods-ios-demo.a */,
+				52E96BFCEA56DB86B378C9B8 /* Pods_ios_demo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +181,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FDBA492B1E62E2FF00C5EFCE /* TLKSimpleWebRTC */ = {
+			isa = PBXGroup;
+			children = (
+				FDBA492C1E62E2FF00C5EFCE /* TLKMediaStream.h */,
+				FDBA492D1E62E2FF00C5EFCE /* TLKMediaStream.m */,
+				FDBA492E1E62E2FF00C5EFCE /* TLKSocketIOSignaling.h */,
+				FDBA492F1E62E2FF00C5EFCE /* TLKSocketIOSignaling.m */,
+			);
+			name = TLKSimpleWebRTC;
+			path = TLKSimpleWebRTC/Classes;
+			sourceTree = "<group>";
+		};
+		FDBA49321E62E30F00C5EFCE /* TLKWebRTC */ = {
+			isa = PBXGroup;
+			children = (
+				FDBA49331E62E30F00C5EFCE /* TLKWebRTC.h */,
+				FDBA49341E62E30F00C5EFCE /* TLKWebRTC.m */,
+			);
+			name = TLKWebRTC;
+			path = TLKWebRTC/Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,12 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A641080119B1241F00725AA0 /* Build configuration list for PBXNativeTarget "ios-demo" */;
 			buildPhases = (
-				E05E3A9CF55D41138D88552F /* Check Pods Manifest.lock */,
+				5A0009E8113B7B9451C0ABF6 /* [CP] Check Pods Manifest.lock */,
 				A64107CB19B1241F00725AA0 /* Sources */,
 				A64107CC19B1241F00725AA0 /* Frameworks */,
 				A64107CD19B1241F00725AA0 /* Resources */,
-				04AEFA5B88914E20B7B165B1 /* Copy Pods Resources */,
-				1C88C46B9E8DFAA887F79ED3 /* Embed Pods Frameworks */,
+				FC9349483F56D83E9335B0B2 /* [CP] Embed Pods Frameworks */,
+				C12AA4103B883BE1BC8D2D12 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,6 +253,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = OTalk;
 				TargetAttributes = {
+					A64107CE19B1241F00725AA0 = {
+						DevelopmentTeam = E33A2PPZWJ;
+					};
 					A64107EF19B1241F00725AA0 = {
 						TestTargetID = A64107CE19B1241F00725AA0;
 					};
@@ -266,14 +302,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04AEFA5B88914E20B7B165B1 /* Copy Pods Resources */ = {
+		5A0009E8113B7B9451C0ABF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C12AA4103B883BE1BC8D2D12 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,34 +332,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-demo/Pods-ios-demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1C88C46B9E8DFAA887F79ED3 /* Embed Pods Frameworks */ = {
+		FC9349483F56D83E9335B0B2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-demo/Pods-ios-demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E05E3A9CF55D41138D88552F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -319,7 +355,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A64107E919B1241F00725AA0 /* ViewController.m in Sources */,
+				FDBA49311E62E2FF00C5EFCE /* TLKSocketIOSignaling.m in Sources */,
+				FDBA49351E62E30F00C5EFCE /* TLKWebRTC.m in Sources */,
 				A64107E319B1241F00725AA0 /* AppDelegate.m in Sources */,
+				FDBA49301E62E2FF00C5EFCE /* TLKMediaStream.m in Sources */,
 				A64107DF19B1241F00725AA0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,16 +481,18 @@
 		};
 		A641080219B1241F00725AA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1FAF0C6D825B902631032A5 /* Pods-ios-demo.debug.xcconfig */;
+			baseConfigurationReference = FA04F534836B85B05E7DCB1E /* Pods-ios-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E33A2PPZWJ;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-demo/ios-demo-Prefix.pch";
 				INFOPLIST_FILE = "ios-demo/ios-demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/libjingle_peerconnection/libjingle_peerconnection",
@@ -464,16 +505,18 @@
 		};
 		A641080319B1241F00725AA0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D71C4F837B6C38F625B89397 /* Pods-ios-demo.release.xcconfig */;
+			baseConfigurationReference = B087684EFA246AD76F360440 /* Pods-ios-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E33A2PPZWJ;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-demo/ios-demo-Prefix.pch";
 				INFOPLIST_FILE = "ios-demo/ios-demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/libjingle_peerconnection/libjingle_peerconnection",

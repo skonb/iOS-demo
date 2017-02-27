@@ -2,7 +2,6 @@
 //  ViewController.m
 //  Copyright (c) 2014 &yet, LLC and otalk contributors
 //
-
 #import "ViewController.h"
 #import "TLKSocketIOSignaling.h"
 #import "TLKMediaStream.h"
@@ -40,14 +39,16 @@
     self.signaling = [[TLKSocketIOSignaling alloc] initWithVideo:YES];
     //TLKSocketIOSignalingDelegate provides signaling notifications
     self.signaling.delegate = self;
-    [self.signaling connectToServer:@"signaling.simplewebrtc.com" port:80 secure:NO success:^{
+//    [self.signaling connectToServer:@"10.0.1.5" port:8080 secure:NO success:^{
+    [self.signaling connectToServer:@"signalmaster-demo.herokuapp.com" port:80 secure:NO success:^{
+        
         [self.signaling joinRoom:@"ios-demo" success:^{
             NSLog(@"join success");
         } failure:^{
             NSLog(@"join failure");
         }];
         NSLog(@"connect success");
-    } failure:^(NSError* error) {
+    } failure:^(NSString *message) {
         NSLog(@"connect failure");
     }];
 }

@@ -26,9 +26,10 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+        <key>NSAllowsArbitraryLoads</key><true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>signaling.simplewebrtc.com</key>
+			<key>signalmaster-demo.herokuapp.com</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
@@ -47,5 +48,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>ビデオチャットのため、カメラにアクセスします。</string>
 </dict>
 </plist>
