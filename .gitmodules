@@ -1,0 +1,6 @@
+[submodule "TLKSimpleWebRTC"]
+	path = TLKSimpleWebRTC
+	url = https://github.com/skonb/TLKSimpleWebRTC
+[submodule "TLKWebRTC"]
+	path = TLKWebRTC
+	url = https://github.com/skonb/TLKWebRTC
